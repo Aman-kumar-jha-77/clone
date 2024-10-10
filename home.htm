@@ -1,0 +1,1493 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+        @media only screen and (max-width:992px) {
+            .nav-link {
+                background-color: white;
+                color: #2098ae !important;
+                padding: 2% 5%;
+            }
+
+            .navbar-nav {
+                width: 100% !important;
+            }
+        }
+
+        @font-face {
+            font-family: poppins;
+            src: url(NextgentourAssets/Poppins-Regular.ttf);
+        }
+
+        @font-face {
+            font-family: barlow;
+            src: url(NextgentourAssets/Barlow-Regular.ttf);
+        }
+
+
+
+        /* **************************navbar********************** */
+        .nav-item {
+            font-family: barlow !important;
+        }
+
+        .navbar-nav {
+            width: 43%;
+            justify-content: center;
+            gap: 1px;
+        }
+
+        .navbar {
+            position: absolute;
+            z-index: 1;
+            width: 100%;
+        }
+
+        .nav-item:hover a {
+            color: #2098ae !important;
+        }
+
+
+        /* ********************banner*********************************** */
+        .banner-one {
+            background-image: url(NextgentourAssets/090423030402-banner3.jpg);
+            height: 100vh;
+            background-position: center;
+            background-size: cover;
+            position: relative;
+        }
+
+        .banner-two {
+            background-image: url(NextgentourAssets/image\ copy.png);
+            height: 100vh;
+            background-position: center;
+            background-size: cover;
+            position: relative;
+        }
+
+        .banner-three {
+            background-image: url(NextgentourAssets/090423020447-Singapore.jpg);
+            height: 100vh;
+            background-position: center;
+            background-size: cover;
+            position: relative;
+        }
+
+        .banner-four {
+            background-image: url(NextgentourAssets/gaint-wheel.png);
+            height: 100vh;
+            background-position: center;
+            background-size: cover;
+            position: relative;
+        }
+
+        .overlay {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+
+            background-color: rgb(15, 36, 84, 0.65);
+        }
+
+        .active .caption {
+            top: 48%;
+            z-index: 1;
+        }
+
+        .caption {
+            font-family: barlow;
+            position: absolute;
+            top: 49%;
+            font-size: 13px;
+            width: 70%;
+            text-align: center;
+            color: white;
+            letter-spacing: 6px;
+            text-transform: uppercase;
+            margin: 0 15%;
+            z-index: -1;
+            transition: 0.5s;
+        }
+
+        .carousel-indicators {
+            bottom: 20px;
+        }
+
+        .carousel-indicators>.active {
+            background-color: #2098ae !important;
+            border-color: #2098ae !important;
+        }
+
+        .carousel-indicators>button {
+            width: 11px !important;
+            height: 11px !important;
+            border-radius: 50%;
+
+            background-color: transparent !important;
+            border: 1px solid white !important;
+        }
+
+        /* **************************banner-end************************** */
+
+
+
+
+        /* *********about************************ */
+
+        .hover-shrink:hover {
+            transform: scale(0.95);
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .hover-shrink {
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .about-img {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .ground-2098 {
+            position: absolute;
+            top: 15%;
+            left: 25%;
+            height: 90vh;
+            width: 75%;
+            z-index: -1;
+            background-color: #2098ae;
+        }
+
+        .ground-dotted {
+            background-image: url(NextgentourAssets/image.png);
+            position: absolute;
+            top: 1%;
+            left: -20%;
+            height: 40%;
+            width: 60%;
+            z-index: -1;
+
+        }
+
+        #hiddenNavbar {
+            position: fixed;
+            z-index: 5;
+            top: -103px;
+            transition: top 1s;
+
+        }
+
+        .navbar-visible {
+            top: 0 !important;
+
+        }
+
+        /* *********************packages********************** */
+        .card:hover .hover-shrink-pkg {
+            transform: scale(1.1);
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .card:hover .dest {
+            bottom: -0rem !important;
+            transition: 0.5s;
+        }
+
+        .hover-shrink-pkg {
+            transition: transform 0.5s ease-in-out;
+
+        }
+
+        .card:hover .gradient {
+            background-image: linear-gradient(to bottom, transparent, rgba(7, 29, 88, 0.6))
+        }
+
+        .card:hover .underLine {
+            width: 250% !important;
+            transition: 0.5s;
+        }
+
+        /* ********************bavkground-video*********************** */
+        .hiddenColor-overlay {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: hsl(222, 70%, 19%, 0.3);
+            transition: background-color 1s;
+        }
+
+        .color-overlay {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            transition: background-color 1s;
+        }
+
+        /* testimonial-carousel */
+        #carouselTestimonial .carousel-indicators {
+            bottom: -40px;
+        }
+
+        #carouselTestimonial-2 .carousel-indicators {
+            bottom: -40px;
+        }
+
+        #carouselTestimonial-3 .carousel-indicators {
+            bottom: -40px;
+        }
+
+        .rating i {
+            font-size: 70%;
+        }
+
+        .review {
+            font-family: barlow;
+            color: #676977;
+        }
+
+        .review h6 {
+            color: #0f2454;
+        }
+
+        /* *********testimonial-end********* */
+
+        /* font family*/
+        .featurette-heading {
+            font-family: poppins !important;
+        }
+
+        .featurette-heading-light {
+            font-family: barlow !important;
+        }
+
+        .offer {
+            font-family: barlow;
+        }
+
+        .foot {
+            font-family: barlow;
+        }
+
+        .head {
+            font-family: poppins;
+        }
+    </style>
+
+
+
+
+</head>
+
+<body data-bs-spy="scroll" data-bs-target="#hiddenNavbar" data-bs-offset="100" tabindex="0" class="overflow-x-hidden">
+    <!--------------BANNER---------------------------------------------->
+
+    <!---navbar-------------------------->
+
+    <nav class="navbar navbar-expand-lg ">
+        <div class="container-fluid m-auto px-0 "
+            style="border-bottom: 1px solid rgb(184, 173, 236, 0.3); width: 84%;padding-top:3px ;">
+            <a class="navbar-brand px-3 pb-3" href="#"><img src="NextgentourAssets/logo-light.png" alt=""
+                    width="160px"></a>
+            <button class="navbar-toggler border-0 " type="button " data-bs-toggle="collapse"
+                style="color: transparent;" data-bs-target="#navbarSupportContent" aria-controls="navbarSupportContent"
+                aria-expanded="false" aria-label="Toggle navigation ">
+                <i class="bi bi-list" style="color: white; font-size: larger;"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 ">
+                    <li class="nav-item ">
+                        <a class="nav-link active text-white " aria-current="page" href="home.htm">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active text-white" aria-current="page" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active text-white" aria-current="page" href="package.html">Packages</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active text-white" aria-current="page" href="gallery.html">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active text-white" aria-current="page" href="contact.html">Contact</a>
+                    </li>
+            </div>
+        </div>
+    </nav>
+
+
+    <nav class="navbar navbar-expand-lg bg-light" id="hiddenNavbar">
+        <div class="container-fluid m-auto " style=" width: 90%;">
+            <a class="navbar-brand px-2 pt-2 " href="#" style="margin-left: 3%;"><img
+                    src="NextgentourAssets/logo-dark.png" alt="" width="160px"></a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" style="color: transparent;"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <i class="bi bi-list" style="color:#0f2454; font-size: larger;"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 " ;>
+                    <li class="nav-item ">
+                        <a class="nav-link active " aria-current="page" href="home.htm" style="color: #2098ae;">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active " aria-current="page" href="about.html"
+                            style="color: #2098ae;">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active " aria-current="page" href="gallery.html"
+                            style="color: #2098ae;">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active " aria-current="page" href="package.html"
+                            style="color: #2098ae;">Packages</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active " aria-current="page" href="contact.html"
+                            style="color: #2098ae;">Contact</a>
+                    </li>
+            </div>
+        </div>
+    </nav>
+
+
+    <!---navbar-end---------------------->
+
+
+
+    <!----carousel----------------------->
+    <div id="carouselAutoplaying" class="carousel slide" data-bs-ride="carousel">
+        <div id="carouselCaptions" class="carousel slide">
+            <div class="carousel-indicators">
+
+                <button type="button" data-bs-target="#carouselCaptions" data-bs-slide-to="0" class="active  "
+                    aria-current="true" aria-label="Slide 1"></button>
+
+
+                <button type="button" data-bs-target="#carouselCaptions" data-bs-slide-to="1"
+                    aria-label=" Slide 2"></button>
+
+                <button type="button" data-bs-target="#carouselCaptions" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+                <button type="button" data-bs-target="#carouselCaptions" data-bs-slide-to="3"
+                    aria-label="Slide 4"></button>
+
+            </div>
+
+
+            <div class="carousel-inner">
+
+                <div class="carousel-item active">
+                    <div class="banner-one d-block w-100 ">
+                        <div class="overlay"></div>
+                        <div class="caption">
+                            <p>Experience a fusion of culture, cuisine, and modernity in the Lion City, Singapore.
+                            <p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="carousel-item">
+                    <div class="banner-two">
+                        <div class="overlay"></div>
+                        <div class="caption">
+                            <p>Garden city, bustling streets, diverse culture, thriving economy.
+                            <p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="banner-three">
+                        <div class="overlay"></div>
+                        <div class="caption">
+                            <p>Singapore: Where East meets West in perfect harmony.
+                            <p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="banner-four">
+                        <div class="overlay"></div>
+                        <div class="caption">
+                            <p>Little red dot shining bright, a city-state of success and might
+                            <p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!----carousel end---------->
+    <!---------------------------BANNER-END---------------------------------------------->
+
+
+
+
+    <!-----------------------ABOUT--------------------------------------------------->
+    <div class="container">
+        <div class=" row featurette" style="padding-top:70px ;">
+            <div class="col-md-7 p-3">
+
+                <h6 class="featurette-heading-light fw-lighter mb-3   text-uppercase "
+                    style="color: #2098ae; letter-spacing: 5px;">the best travel agengy</h6>
+                <h1 class="featurette-heading  lh-1 text-uppercase fw-bold mb-4"
+                    style="color: #0f2454;font-size: 34px;">nextgen tours
+                </h1>
+                <p class=" lh-2 mb-4" style="color: #676977; font-size: 16px;font-weight:normal;font-family: barlow;">
+                    Nextgen Tours is one
+                    of the
+                    most trusted tour and travel company in Singapore who strongly believe in customer satisfaction. We
+                    provide you Domestic and International tour and travel services at economical price. Nextgen Tours
+                    will help you to get the best value of your money on Domestic as well as International holiday tour
+                    packages. </p>
+                <p class=" lh-2 mb-4" style="color: #fff; font-size: 16px;font-weight:normal;font-family: barlow;">
+                    All you need to do is
+                    just
+                    select your dream destination here, And we will pay attention to details in order to make your trip
+                    worth remembering and memorable in the competitive pricing. </p>
+                <div class=" achvmnt d-block py">
+                    <span class="achievement"><i class="bi bi-check-circle-fill fs-5 " style="color: #2098ae;"></i><span
+                            class="txt " style="color: #676977; font-size: 16px;font-weight:normal;"> 5+ Years of
+                            Experience</span></span>
+                </div>
+                <div class=" achvmnt d-block">
+                    <span class="achievement"><i class="bi bi-check-circle-fill fs-5 "
+                            style="color: #2098ae;font-family: barlow;"></i>
+                        <span class="txt"
+                            style="color: #676977; font-size: 16px;font-weight:normal;font-family: barlow;"> 50+ Tour
+                            Destinations</span></span>
+                </div>
+                <button type="button" class="btn btn-primary mt-5 fw-lighter fs-6"
+                    onclick="window.location.href='about.html'" style="font-family: barlow;">Read
+                    more</button>
+
+            </div>
+
+
+            <div class=" about-img col-md-5 d-flex align-items-center">
+                <div class="featurette-image img-fluid mx-auto p-3 ">
+
+                    <img src="NextgentourAssets/about.jpg" class=" hover-shrink mx-auto" alt=""
+                        style="height: 88vh; width: 98%;">
+
+
+                    <div class="ground-2098"> </div>
+                    <div class="ground-dotted"> </div>
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+    <!-----------------------ABOUT-END----------------------------------------------->
+
+
+
+
+    <!-----------------------PACKAGES------------------------------------------------>
+    <div class="packages" style="background-color: #f4f5f8;">
+        <div class="container py-5">
+
+            <h6 class="featurette-heading-light fw-lighter fs-6 lh-1 text-uppercase mb-3"
+                style="color: #2098ae; letter-spacing: 5px;">choose your package</h6>
+            <h1 class="featurette-heading  lh-1 text-uppercase fw-bold mb-4" style="color: #0f2454;">best tour <span
+                    style="color: #2098ae;"> packages</span>
+            </h1>
+
+
+
+            <div class="row row-cols-1 row-cols-sm-1 row-cols-md-3 g-3">
+
+                <a href="singapore.packages.html">
+
+                    <div class="col">
+                        <div class="card " style="overflow: hidden; position: relative;">
+
+
+                            <img class="hover-shrink-pkg" src="NextgentourAssets/090423020447-Singapore.jpg">
+
+                            <div class="gradient "
+                                style=" width: 100%;;position: absolute;height: 100%;background-color:transparent;">
+                            </div>
+
+                            <div class="offer my-2 p-1 text-white"
+                                style="text-align: center; width: 8rem;position: absolute; background-color: #2098ae;font-size: 0.8rem;">
+                                <div class="sgd ">SGD <span class="text-decoration-line-through">350</span> / SGD 325
+                                </div>
+                                <div class="discount    mx-auto  ;"
+                                    style="background-color: rgb(115, 184, 12);width: 90%;">
+                                    7%
+                                    OFF</div>
+                            </div>
+
+                            <div class="dest text-white"
+                                style="position: absolute; bottom: -2rem; transform: translate(15%,10%);font-family: poppins;">
+                                <h3>Singapore</h3>
+                                <div class="underLine border-bottom w-25 mb-3"></div>
+                                <ul class="d-flex list-unstyled mt-auto">
+                                    <li class="d-flex align-items-center me-3">
+                                        <i class="bi bi-clock"></i>&nbsp;
+                                        <small>4</small>
+                                    </li>
+                                    <li class="d-flex align-items-center me-3">
+                                        <i class="bi bi-person"></i>&nbsp;
+                                        <small>4</small>
+                                    </li>
+                                    <li class="d-flex align-items-center">
+                                        <i class="bi bi-geo-alt"></i>
+                                        <small>Singapore</small>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <a href="singapore2.packages.html">
+                    <div class="col">
+                        <div class="card " style="overflow: hidden; position: relative;">
+
+
+                            <img class="hover-shrink-pkg" src="NextgentourAssets/150423030409-pkg2.jpg">
+
+                            <div class="gradient "
+                                style=" width: 100%;;position: absolute;height: 100%;background-color:transparent;">
+                            </div>
+
+                            <div class="offer my-2 p-1 text-white"
+                                style="text-align: center; width: 8rem;position: absolute; background-color: #2098ae;font-size: 0.8rem;">
+                                <div class="sgd ">SGD <span class="text-decoration-line-through">450</span> / SGD 300
+                                </div>
+                                <div class="discount    mx-auto  ;"
+                                    style="background-color: rgb(115, 184, 12);width: 90%;">
+                                    33%
+                                    OFF</div>
+                            </div>
+
+                            <div class="dest text-white"
+                                style="position: absolute; bottom: -2rem; transform: translate(15%,10%);font-family: poppins;">
+                                <h3>Singapore</h3>
+                                <div class="underLine border-bottom w-25 mb-3"></div>
+                                <ul class="d-flex list-unstyled mt-auto">
+                                    <li class="d-flex align-items-center me-3">
+                                        <i class="bi bi-clock"></i>&nbsp;
+                                        <small>3</small>
+                                    </li>
+                                    <li class="d-flex align-items-center me-3">
+                                        <i class="bi bi-person"></i>&nbsp;
+                                        <small>4</small>
+                                    </li>
+                                    <li class="d-flex align-items-center">
+                                        <i class="bi bi-geo-alt"></i>
+                                        <small>Singapore</small>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                </a>
+            </div>
+            <a href="dubai.packages.html">
+                <div class="col">
+                    <div class="card " style="overflow: hidden; position: relative;">
+
+
+                        <img class="hover-shrink-pkg" src="NextgentourAssets/150423030430-dubai.jpg">
+
+                        <div class="gradient "
+                            style=" width: 100%;;position: absolute;height: 100%;background-color:transparent;"></div>
+
+                        <div class="offer my-2 p-1 text-white d-none"
+                            style="text-align: center; width: 8rem;position: absolute; background-color: #2098ae;font-size: 0.8rem;">
+                            <div class="sgd ">SGD <span class="text-decoration-line-through">350</span> / SGD 325 </div>
+                            <div class="discount    mx-auto  ;" style="background-color: rgb(115, 184, 12);width: 90%;">
+                                7%
+                                OFF</div>
+                        </div>
+
+                        <div class="dest text-white"
+                            style="position: absolute; bottom: -2rem; transform: translate(15%,10%);font-family: poppins;">
+                            <h3>Dubai</h3>
+                            <div class="underLine border-bottom w-25 mb-3"></div>
+                            <ul class="d-flex list-unstyled mt-auto">
+                                <li class="d-flex align-items-center me-3">
+                                    <i class="bi bi-clock"></i>&nbsp;
+                                    <small>4</small>
+                                </li>
+                                <li class="d-flex align-items-center me-3">
+                                    <i class="bi bi-person"></i>&nbsp;
+                                    <small>4</small>
+                                </li>
+                                <li class="d-flex align-items-center">
+                                    <i class="bi bi-geo-alt"></i>
+                                    <small>Dubai</small>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            <a href="maldives.packages.html">
+                <div class="col">
+                    <div class="card " style="overflow: hidden; position: relative;">
+
+
+                        <img class="hover-shrink-pkg" src="NextgentourAssets/150423030438-maldives1.jpg">
+
+                        <div class="gradient "
+                            style=" width: 100%;;position: absolute;height: 100%;background-color:transparent;"></div>
+
+                        <div class="offer my-2 p-1 text-white d-none"
+                            style="text-align: center; width: 8rem;position: absolute; background-color: #2098ae;font-size: 0.8rem;">
+                            <div class="sgd ">SGD <span class="text-decoration-line-through">350</span> / SGD 325 </div>
+                            <div class="discount    mx-auto  ;" style="background-color: rgb(115, 184, 12);width: 90%;">
+                                7%
+                                OFF</div>
+                        </div>
+
+                        <div class="dest text-white"
+                            style="position: absolute; bottom: -2rem; transform: translate(15%,10%);font-family: poppins;">
+                            <h3>Maldives</h3>
+                            <div class="underLine border-bottom w-25 mb-3"></div>
+                            <ul class="d-flex list-unstyled mt-auto">
+                                <li class="d-flex align-items-center me-3">
+                                    <i class="bi bi-clock"></i>&nbsp;
+                                    <small>4</small>
+                                </li>
+                                <li class="d-flex align-items-center me-3">
+                                    <i class="bi bi-person"></i>&nbsp;
+                                    <small>4</small>
+                                </li>
+                                <li class="d-flex align-items-center">
+                                    <i class="bi bi-geo-alt"></i>
+                                    <small>Maldives</small>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+    </div>
+    <!-----------------------PACKAGES-END--------------------------------------------->
+
+
+
+
+    <!-- --------------------GALLERY-------------------------------------------------->
+    <div class="container py-5">
+
+        <h6 class="featurette-heading-light fw-lighter fs-6 lh-1 text-uppercase mb-3 "
+            style="color: #2098ae; letter-spacing: 5px;">images </h6>
+        <h1 class="featurette-heading  lh-1 text-uppercase fw-bold mb-4" style="color: #12456d;">image <span
+                style="color: #2098ae;"> gallery</span>
+        </h1>
+
+        <div class="row row-cols-1 row-cols-sm-4 row-cols-md-4 g-4 p-3">
+            <div class="col ">
+                <div class="card shadow-sm "><img class="pkg-img " width="100%" height="225"
+                        src="NextgentourAssets/160423100407-river-cruise.jpg"></img> </div>
+            </div>
+
+            <div class="col">
+                <div class="card shadow-sm">
+                    <img class="pkg-img" width="100%" height="225"
+                        src="NextgentourAssets/160423100438-LilyBeach3.png"></img>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card shadow-sm">
+                    <img class="pkg-img" width="100%" height="225"
+                        src="NextgentourAssets/160423100406-Ayada Maldives villas SUNSET O.jpg"></img>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card shadow-sm">
+                    <img class="pkg-img" width="100%" height="225"
+                        src="NextgentourAssets/160423100408-BO_6936-SPA.jpeg"></img>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- --------------------GALLERY-END---------------------------------------------->
+
+
+
+
+    <!-- --------------------BACKGROUND-VIDEO----------------------------------------->
+    <div class="row"></div>
+    <div class="video-background" style=" position: relative; width: 100%; height: 55vh; overflow: hidden;">
+        <video loop muted autoplay
+            style="position: absolute; width: 100%; height: 100%; object-fit: cover; z-index: -1;">
+            <source src="NextgentourAssets/travel-video.mp4" type="video/mp4">
+        </video>
+        <div class="color-overlay"></div>
+        <div class="text-overlay text-center"
+            style=" position: relative;top: 50%;left: 50%;transform: translate(-50%, -50%);z-index: 1;font-family: poppins;">
+            <h1 class="fw-bold text-white">Costa Victoria Cochin</h1>
+            <ul class="d-flex list-unstyled mt-auto justify-content-center text-white">
+                <li class="d-flex align-items-center"></li>
+                <i class="bi bi-geo-alt">&nbsp;</i>
+                <small>Maldives</small>&nbsp;&nbsp;&nbsp;
+                </li>
+                <li class="d-flex align-items-center me-3">
+                    <i class="bi bi-clock ">&nbsp;</i>
+                    <small>4 Days +3 Nights</small>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!---------------------------BACKGROUND-VIDEO-END------------------------------------->
+
+
+
+
+    <!-----------------------TESTIMONIAL---------------------------------------------->
+
+    <div class="testimonial" style="background-color:#12456d;">
+        <div class="container py-5">
+
+            <h6 class="featurette-heading-light fw-lighter fs-6 lh-1 text-uppercase mb-3"
+                style="color: #fff; letter-spacing: 5px;">
+                testimonial</h6>
+            <h1 class="featurette-heading  lh-1 text-uppercase fw-bold mb-4" style="color: #fff;">travellers review
+            </h1>
+
+            <div class="comment ">
+
+
+                <div class="review-large d-none d-sm-none d-md-none d-lg-block">
+                    <div id="carouselAutoplaying" class="carousel slide" data-bs-ride="carousel">
+                        <div id="carouselTestimonial" class="carousel slide">
+                            <div class="carousel-indicators">
+
+                                <button type="button" data-bs-target="#carouselTestimonial" data-bs-slide-to="0"
+                                    class="active" aria-current="true" aria-label="Slide 1"></button>
+
+
+                                <button type="button" data-bs-target="#carouselTestimonial" data-bs-slide-to="1"
+                                    aria-label=" Slide 2"></button>
+
+
+
+                            </div>
+                            <div class="carousel-inner">
+
+                                <div class="carousel-item active">
+                                    <div class="review-slide-1 d-block w-100 ">
+                                        <div class="review d-flex">
+
+
+                                            <div class="col-sm-12 col-md-6 col-lg-4 bg-light p-4 m-2 "
+                                                style="text-align: center;">
+                                                <p>Our tour agent went above and beyond to ensure our trip was flawless.
+                                                    Highly
+                                                    recommended!
+                                                </p>
+                                                <img class="profile-img rounded-circle mt-5 mb-2" width="100"
+                                                    height="100" src="NextgentourAssets/160423100450-sentosa.jpg">
+                                                </img>
+                                                <div class="cont">
+                                                    <div class="rating"><i
+                                                            class="bi bi-star-fill text-warning"></i>&nbsp;<i
+                                                            class="bi bi-star-fill text-warning"></i>&nbsp;<i
+                                                            class="bi bi-star-fill text-warning"></i>&nbsp;<i
+                                                            class="bi bi-star-fill text-warning"></i>&nbsp;<i
+                                                            class="bi bi-star-fill text-warning"></i>
+                                                        <h6>Rajat Aggarwal</h6> <span>Guest review</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-sm-12 col-md-6 col-lg-4 bg-light p-4 m-2 "
+                                                style="text-align: center;">
+                                                <p>I want to express my gratitide for the amazing trip you planned.
+                                                    Everything
+                                                    was perfect.
+                                                </p>
+                                                <img class="profile-img rounded-circle mt-5 mb-2" width="100"
+                                                    height="100" src="NextgentourAssets/160423100402-sea aquarim.jpg">
+                                                </img>
+                                                <div class="cont">
+                                                    <div class="rating"><i
+                                                            class="bi bi-star-fill text-warning"></i>&nbsp;<i
+                                                            class="bi bi-star-fill text-warning"></i>&nbsp;<i
+                                                            class="bi bi-star-fill text-warning"></i>&nbsp;<i
+                                                            class="bi bi-star-fill text-warning"></i>&nbsp;<i
+                                                            class="bi bi-star-fill text-warning"></i>
+                                                        <h6>Tripti Garg</h6> <span>Guest review</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-sm-12 col-md-6 col-lg-4 bg-light p-4 m-2 "
+                                                style="text-align: center;">
+                                                <p>Excellent service, seamless planning, and unforgettable experiences.
+                                                </p>
+                                                <img class="profile-img rounded-circle mt-5 mb-2" width="100"
+                                                    height="100"
+                                                    src="NextgentourAssets/160423100432-gbb-supertree3.jpg"> </img>
+                                                <div class="cont">
+                                                    <div class="rating"><i class="bi bi-star-fill text-warning"></i><i
+                                                            class="bi bi-star-fill text-warning"></i>&nbsp;<i
+                                                            class="bi bi-star-fill text-warning"></i>&nbsp;<i
+                                                            class="bi bi-star-fill text-warning"></i>&nbsp;<i
+                                                            class="bi bi-star-fill text-warning"></i>
+                                                        <h6>Sakshi Bhatt</h6> <span>Guest review</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="carousel-item ">
+                                    <div class="review-slide-2 d-block w-100 ">
+                                        <div class="review d-flex">
+
+
+                                            <div class="col-sm-12 col-md-6 col-lg-4 bg-light p-4 m-2 "
+                                                style="text-align: center;">
+                                                <p>Exceptional service, attention to detail, and unforgettable
+                                                    experiences.
+                                                    Thank you
+                                                </p>
+                                                <img class="profile-img rounded-circle mt-5 mb-2" width="100"
+                                                    height="100" src="NextgentourAssets/image copy 2.png"> </img>
+                                                <div class="cont">
+                                                    <div class="rating"><i
+                                                            class="bi bi-star-fill text-warning"></i>&nbsp;<i
+                                                            class="bi bi-star-fill text-warning"></i>&nbsp;<i
+                                                            class="bi bi-star-fill text-warning"></i>&nbsp;<i
+                                                            class="bi bi-star-fill text-warning"></i>&nbsp;<i
+                                                            class="bi bi-star-fill text-warning"></i>
+                                                        <h6>Suresh bansal</h6> <span>Guest review</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-sm-12 col-md-6 col-lg-4 bg-light p-4 m-2 "
+                                                style="text-align: center;">
+                                                <p>Travelling opens doors to new experiences, broadens horizons, and
+                                                    creates
+                                                    memories forever.
+                                                </p>
+                                                <img class="profile-img rounded-circle mt-5 mb-2" width="100"
+                                                    height="100"
+                                                    src="NextgentourAssets/160423100430-gbb-supertree2.jpg"> </img>
+                                                <div class="cont">
+                                                    <div class="rating"><i
+                                                            class="bi bi-star-fill text-warning">&nbsp;</i><i
+                                                            class="bi bi-star-fill text-warning"></i>&nbsp;<i
+                                                            class="bi bi-star-fill text-warning"></i>&nbsp;<i
+                                                            class="bi bi-star-fill text-warning"></i>&nbsp;<i
+                                                            class="bi bi-star-fill text-warning"></i>
+                                                        <h6>Ankit Bajaj</h6> <span>Guest review</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-12 col-md-6 col-lg-4 bg-light p-4 m-2 "
+                                                style="text-align: center;">
+                                                <p>Our tour agent went above and beyond to ensure our trip was flawless.
+                                                    Highly
+                                                    recommended!
+                                                </p>
+                                                <img class="profile-img rounded-circle mt-5 mb-2" width="100"
+                                                    height="100" src="NextgentourAssets/160423100450-sentosa.jpg">
+                                                </img>
+                                                <div class="cont">
+                                                    <div class="rating"><i
+                                                            class="bi bi-star-fill text-warning">&nbsp;</i><i
+                                                            class="bi bi-star-fill text-warning"></i>&nbsp;<i
+                                                            class="bi bi-star-fill text-warning"></i>&nbsp;<i
+                                                            class="bi bi-star-fill text-warning"></i>&nbsp;<i
+                                                            class="bi bi-star-fill text-warning"></i>
+                                                        <h6>Rajat Aggarwal</h6> <span>Guest review</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+
+
+
+
+
+
+                                        </div>
+                                    </div>
+
+                                </div>
+
+
+
+
+
+
+
+
+                            </div>
+                        </div>
+
+
+
+
+                    </div>
+                </div>
+
+                <div class="review-mdiam d-none d-sm-none d-lg-none d-md-block">
+                    <div id="carouselAutoplaying" class="carousel slide" data-bs-ride="carousel">
+                        <div id="carouselTestimonial-2" class="carousel slide">
+                            <div class="carousel-indicators">
+
+                                <button type="button" data-bs-target="#carouselTestimonial-2" data-bs-slide-to="0"
+                                    class="active" aria-current="true" aria-label="Slide 1"></button>
+
+
+                                <button type="button" data-bs-target="#carouselTestimonial-2" data-bs-slide-to="1"
+                                    aria-label=" Slide 2"></button>
+
+                                <button type="button" data-bs-target="#carouselTestimonial-2" data-bs-slide-to="2"
+                                    aria-label=" Slide 3"></button>
+
+
+
+                            </div>
+                            <div class="carousel-inner">
+
+                                <div class="carousel-item active">
+                                    <div class="review-slide-1 d-block w-100 ">
+                                        <div class="review d-flex">
+                                            <div class="col-sm-12 col-md-6 col-lg-4 bg-light p-4 m-2 "
+                                                style="text-align: center;">
+                                                <p>Our tour agent went above and beyond to ensure our trip was flawless.
+                                                    Highly
+                                                    recommended!
+                                                </p>
+                                                <img class="profile-img rounded-circle mt-5 mb-2" width="100"
+                                                    height="100" src="NextgentourAssets/160423100450-sentosa.jpg">
+                                                </img>
+                                                <div class="cont">
+                                                    <div class="rating"><i
+                                                            class="bi bi-star-fill text-warning"></i>&nbsp;<i
+                                                            class="bi bi-star-fill text-warning"></i>&nbsp;<i
+                                                            class="bi bi-star-fill text-warning"></i>&nbsp;<i
+                                                            class="bi bi-star-fill text-warning"></i>&nbsp;<i
+                                                            class="bi bi-star-fill text-warning"></i>
+                                                        <h6>Rajat Aggarwal</h6> <span>Guest review</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-sm-12 col-md-6 col-lg-4 bg-light p-4 m-2 "
+                                                style="text-align: center;">
+                                                <p>I want to express my gratitide for the amazing trip you planned.
+                                                    Everything
+                                                    was perfect.
+                                                </p>
+                                                <img class="profile-img rounded-circle mt-5 mb-2" width="100"
+                                                    height="100" src="NextgentourAssets/160423100402-sea aquarim.jpg">
+                                                </img>
+                                                <div class="cont">
+                                                    <div class="rating"><i
+                                                            class="bi bi-star-fill text-warning"></i>&nbsp;<i
+                                                            class="bi bi-star-fill text-warning"></i>&nbsp;<i
+                                                            class="bi bi-star-fill text-warning"></i>&nbsp;<i
+                                                            class="bi bi-star-fill text-warning"></i>&nbsp;<i
+                                                            class="bi bi-star-fill text-warning"></i>
+                                                        <h6>Tripti Garg</h6> <span>Guest review</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-item ">
+                                    <div class="review-slide-2 d-block w-100 ">
+                                        <div class="review d-flex">
+
+
+
+                                            <div class="col-sm-12 col-md-6 col-lg-4 bg-light p-4 m-2 "
+                                                style="text-align: center;">
+                                                <p>Excellent service, seamless planning, and unforgettable experiences.
+                                                </p>
+                                                <img class="profile-img rounded-circle mt-5 mb-2" width="100"
+                                                    height="100"
+                                                    src="NextgentourAssets/160423100432-gbb-supertree3.jpg"> </img>
+                                                <div class="cont">
+                                                    <div class="rating"><i class="bi bi-star-fill text-warning"></i><i
+                                                            class="bi bi-star-fill text-warning"></i>&nbsp;<i
+                                                            class="bi bi-star-fill text-warning"></i>&nbsp;<i
+                                                            class="bi bi-star-fill text-warning"></i>&nbsp;<i
+                                                            class="bi bi-star-fill text-warning"></i>
+                                                        <h6>Sakshi Bhatt</h6> <span>Guest review</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="col-sm-12 col-md-6 col-lg-4 bg-light p-4 m-2 "
+                                                style="text-align: center;">
+                                                <p>Exceptional service, attention to detail, and unforgettable
+                                                    experiences.
+                                                    Thank you
+                                                </p>
+                                                <img class="profile-img rounded-circle mt-5 mb-2" width="100"
+                                                    height="100" src="NextgentourAssets/image copy 2.png"> </img>
+                                                <div class="cont">
+                                                    <div class="rating"><i
+                                                            class="bi bi-star-fill text-warning"></i>&nbsp;<i
+                                                            class="bi bi-star-fill text-warning"></i>&nbsp;<i
+                                                            class="bi bi-star-fill text-warning"></i>&nbsp;<i
+                                                            class="bi bi-star-fill text-warning"></i>&nbsp;<i
+                                                            class="bi bi-star-fill text-warning"></i>
+                                                        <h6>Suresh bansal</h6> <span>Guest review</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+
+
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-item "></div>
+                                <div class="review-slide-3 d-block w-100 ">
+                                    <div class="review d-flex">
+
+
+                                        <div class="col-sm-12 col-md-6 col-lg-4 bg-light p-4 m-2 "
+                                            style="text-align: center;">
+                                            <p>Travelling opens doors to new experiences, broadens horizons, and creates
+                                                memories forever.
+                                            </p>
+                                            <img class="profile-img rounded-circle mt-5 mb-2" width="100" height="100"
+                                                src="NextgentourAssets/160423100430-gbb-supertree2.jpg"> </img>
+                                            <div class="cont">
+                                                <div class="rating"><i class="bi bi-star-fill text-warning">&nbsp;</i><i
+                                                        class="bi bi-star-fill text-warning"></i>&nbsp;<i
+                                                        class="bi bi-star-fill text-warning"></i>&nbsp;<i
+                                                        class="bi bi-star-fill text-warning"></i>&nbsp;<i
+                                                        class="bi bi-star-fill text-warning"></i>
+                                                    <h6>Ankit Bajaj</h6> <span>Guest review</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-12 col-md-6 col-lg-4 bg-light p-4 m-2 "
+                                            style="text-align: center;">
+                                            <p>Our tour agent went above and beyond to ensure our trip was flawless.
+                                                Highly
+                                                recommended!
+                                            </p>
+                                            <img class="profile-img rounded-circle mt-5 mb-2" width="100" height="100"
+                                                src="NextgentourAssets/160423100450-sentosa.jpg"> </img>
+                                            <div class="cont">
+                                                <div class="rating"><i class="bi bi-star-fill text-warning">&nbsp;</i><i
+                                                        class="bi bi-star-fill text-warning"></i>&nbsp;<i
+                                                        class="bi bi-star-fill text-warning"></i>&nbsp;<i
+                                                        class="bi bi-star-fill text-warning"></i>&nbsp;<i
+                                                        class="bi bi-star-fill text-warning"></i>
+                                                    <h6>Rajat Aggarwal</h6> <span>Guest review</span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+
+
+
+
+
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="review-small d-md-none d-lg-none d-sm-block">
+                    <div id="carouselAutoplaying" class="carousel slide" data-bs-ride="carousel">
+                        <div id="carouselTestimonial-3" class="carousel slide">
+                            <div class="carousel-indicators">
+
+                                <button type="button" data-bs-target="#carouselTestimonial-3" data-bs-slide-to="0"
+                                    class="active" aria-current="true" aria-label="Slide 1"></button>
+
+
+                                <button type="button" data-bs-target="#carouselTestimonial-3" data-bs-slide-to="1"
+                                    aria-label=" Slide 2"></button>
+
+                                <button type="button" data-bs-target="#carouselTestimonial-3" data-bs-slide-to="2"
+                                    aria-label=" Slide 3 "></button>
+
+
+
+                                <button type="button" data-bs-target="#carouselTestimonial-3" data-bs-slide-to="3"
+                                    aria-label=" Slide 4"></button>
+
+                                <button type="button" data-bs-target="#carouselTestimonial-3" data-bs-slide-to="4"
+                                    aria-label=" Slide 5"></button>
+
+
+
+
+
+                            </div>
+                            <div class="carousel-inner">
+                                <div class="carousel-item active ">
+                                    <div class="review-slide-1 d-block w-100 ">
+                                        <div class="review d-flex">
+                                            <div class="col-sm-12 col-md-6 col-lg-4 bg-light p-4 m-2 "
+                                                style="text-align: center;">
+                                                <p>Our tour agent went above and beyond to ensure our trip was flawless.
+                                                    Highly
+                                                    recommended!
+                                                </p>
+                                                <img class="profile-img rounded-circle mt-5 mb-2" width="100"
+                                                    height="100" src="NextgentourAssets/160423100450-sentosa.jpg">
+                                                </img>
+                                                <div class="cont">
+                                                    <div class="rating"><i
+                                                            class="bi bi-star-fill text-warning"></i>&nbsp;<i
+                                                            class="bi bi-star-fill text-warning"></i>&nbsp;<i
+                                                            class="bi bi-star-fill text-warning"></i>&nbsp;<i
+                                                            class="bi bi-star-fill text-warning"></i>&nbsp;<i
+                                                            class="bi bi-star-fill text-warning"></i>
+                                                        <h6>Rajat Aggarwal</h6> <span>Guest review</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-item ">
+                                    <div class="review-slide-2 d-block w-100 ">
+                                        <div class="review d-flex">
+                                            <div class="col-sm-12 col-md-6 col-lg-4 bg-light p-4 m-2 "
+                                                style="text-align: center;">
+                                                <p>I want to express my gratitide for the amazing trip you planned.
+                                                    Everything
+                                                    was perfect.
+                                                </p>
+                                                <img class="profile-img rounded-circle mt-5 mb-2" width="100"
+                                                    height="100" src="NextgentourAssets/160423100402-sea aquarim.jpg">
+                                                </img>
+                                                <div class="cont">
+                                                    <div class="rating"><i
+                                                            class="bi bi-star-fill text-warning"></i>&nbsp;<i
+                                                            class="bi bi-star-fill text-warning"></i>&nbsp;<i
+                                                            class="bi bi-star-fill text-warning"></i>&nbsp;<i
+                                                            class="bi bi-star-fill text-warning"></i>&nbsp;<i
+                                                            class="bi bi-star-fill text-warning"></i>
+                                                        <h6>Tripti Garg</h6> <span>Guest review</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-item ">
+                                    <div class="review-slide-3 d-block w-100 ">
+                                        <div class="review d-flex">
+                                            <div class="col-sm-12 col-md-6 col-lg-4 bg-light p-4 m-2 "
+                                                style="text-align: center;">
+                                                <p>Excellent service, seamless planning, and unforgettable experiences.
+                                                </p>
+                                                <img class="profile-img rounded-circle mt-5 mb-2" width="100"
+                                                    height="100"
+                                                    src="NextgentourAssets/160423100432-gbb-supertree3.jpg"> </img>
+                                                <div class="cont">
+                                                    <div class="rating"><i class="bi bi-star-fill text-warning"></i><i
+                                                            class="bi bi-star-fill text-warning"></i>&nbsp;<i
+                                                            class="bi bi-star-fill text-warning"></i>&nbsp;<i
+                                                            class="bi bi-star-fill text-warning"></i>&nbsp;<i
+                                                            class="bi bi-star-fill text-warning"></i>
+                                                        <h6>Sakshi Bhatt</h6> <span>Guest review</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-item ">
+                                    <div class="review-slide-4 d-block w-100 ">
+                                        <div class="review d-flex">
+                                            <div class="col-sm-12 col-md-6 col-lg-4 bg-light p-4 m-2 "
+                                                style="text-align: center;">
+                                                <p>Exceptional service, attention to detail, and unforgettable
+                                                    experiences.
+                                                    Thank you
+                                                </p>
+                                                <img class="profile-img rounded-circle mt-5 mb-2" width="100"
+                                                    height="100" src="NextgentourAssets/image copy 2.png"> </img>
+                                                <div class="cont">
+                                                    <div class="rating"><i
+                                                            class="bi bi-star-fill text-warning"></i>&nbsp;<i
+                                                            class="bi bi-star-fill text-warning"></i>&nbsp;<i
+                                                            class="bi bi-star-fill text-warning"></i>&nbsp;<i
+                                                            class="bi bi-star-fill text-warning"></i>&nbsp;<i
+                                                            class="bi bi-star-fill text-warning"></i>
+                                                        <h6>Suresh bansal</h6> <span>Guest review</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-item ">
+                                    <div class="review-slide-5 d-block w-100 ">
+                                        <div class="review d-flex">
+                                            <div class="col-sm-12 col-md-6 col-lg-4 bg-light p-4 m-2 "
+                                                style="text-align: center;">
+                                                <p>Travelling opens doors to new experiences, broadens horizons, and
+                                                    creates
+                                                    memories forever.
+                                                </p>
+                                                <img class="profile-img rounded-circle mt-5 mb-2" width="100"
+                                                    height="100"
+                                                    src="NextgentourAssets/160423100430-gbb-supertree2.jpg"> </img>
+                                                <div class="cont">
+                                                    <div class="rating"><i
+                                                            class="bi bi-star-fill text-warning">&nbsp;</i><i
+                                                            class="bi bi-star-fill text-warning"></i>&nbsp;<i
+                                                            class="bi bi-star-fill text-warning"></i>&nbsp;<i
+                                                            class="bi bi-star-fill text-warning"></i>&nbsp;<i
+                                                            class="bi bi-star-fill text-warning"></i>
+                                                        <h6>Ankit Bajaj</h6> <span>Guest review</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-----------------------TESTIMONIAL-END------------------------------------------>
+
+
+
+
+    <!-----------------------FOOTER--------------------------------------------------->
+    <div class="foot" style="background-color: #0f2454;">
+        <div class="container pt-5">
+
+
+            <div class="foot" style="background-color: #0f2454;">
+                <div class="container py-5 ">
+                    <div class="row ps-2 py-3 d-flex align-items-center" style="border: 1px solid #676977;">
+
+
+                        <div class="col-12 col-sm-12 col-md-5 col-lg-3 right-border">
+
+                            <div class="call d-flex justify-content-start mb-3 p-2 ">
+                                <div class="call-icon bg-info me-3 my-auto p-2 text-white " style="width: 4rem;"><i
+                                        class="bi bi-telephone" style="font-size: 3rem;"></i></div>
+                                <div class="mobile-no">
+                                    <div class="head text-white fw-bold">Call us</div>
+                                    <a href="tel:+7079465980" class="w-100 text-white ">+91 7079465980</a><br>
+                                    <a href="tel:+7079465980" class="w-100 text-white">+91 7079465980</a>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="d-none d-sm-block d-md-none d-lg-none" style="border-bottom: 1px solid #676977 ;">
+                        </div>
+
+
+
+                        <div class="col-12 col-sm-12 col-md-6 col-lg-3 right-border">
+                            <div class="mail d-flex justify-content-start mb-3 p-2">
+                                <div class="mail-icon bg-info me-3 my-auto p-2 text-white " style="width: 4rem;"><i
+                                        class="bi bi-envelope-paper" style="font-size: 3rem;"></i></div>
+                                <div class="mail-id">
+                                    <div class="head text-white fw-bold">Write to us</div>
+
+                                    <a class="w-100 text-white"
+                                        href="mailto:info@nextgentours.net">info@nextgentours.net</a>
+                                </div>
+                            </div>
+
+
+
+                        </div>
+                        <div class=" d-none d-sm-block d-md-none d-lg-none" style="border-bottom: 1px solid #676977 ;">
+                        </div>
+                        <div class="border-end d-none d-sm-none d-md-none d-lg-block  col-1"></div>
+                        <div class="col-12 col-sm-12 col-md-12 col-lg-4 ">
+
+                            <div class="add d-flex justify-content-start p-2">
+                                <div class="add-icon bg-info me-3 my-auto p-2 text-white " style="width: 4rem;"><i
+                                        class="bi bi-geo-alt" style="font-size: 3rem;"></i></div>
+                                <div class="add-location">
+                                    <div class="head text-white fw-bold">Address</div>
+
+                                    <div class="office w-100 text-white">
+                                        <span class="text-info">Singapore Office: </span>BKL 202B Seng keng East Road
+                                        #02-07 Singapore-542202
+                                    </div>
+                                    <div class="office w-100 text-white">
+                                        <span class="text-info">India Office: </span>Rz-24, B-Block,Arjun Park,
+                                        Najafgarh, New Delhi-11043
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+
+
+
+
+
+
+                    </div>
+                </div>
+
+
+            </div>
+
+
+            <footer class="pt-4 my-mt-5 pt-md-5 " style="background-color:#0f2454">
+                <div class="row row-cols-1 row-cols-sm-1 row-cols-md-3 row-cols-lg-3 text-light py-5">
+                    <div class="col-12 col-md">
+                        <img class="mb-2 " src="logo-light.png" alt="" style="width: 160px;">
+                        <small class="d-block mb-3  fs-6"
+                            style="color:rgba(255,255,255,0.8);font-family: barlow;">Nextgen
+                            Tours is a leading travel
+                            agency in Singapore which
+                            was established in 2023.</small>
+                    </div>
+
+                    <div class=" col-12 col-md">
+                        <h5 class="mx-2 fw-bold" style="font-family: poppins;">Quick Links</h5>
+                        <ul class=" text-small " style="font-family: barlow;">
+                            <li class="mb-1 text-info"><a class=" text-decoration-none" href="home.htm"
+                                    style="color:rgba(255,255,255,0.8);">Home</a></li>
+                            <li class="mb-1 text-info"><a class=" text-decoration-none" href="about.html"
+                                    style="color:rgba(255,255,255,0.8);">About</a></li>
+                            <li class="mb-1 text-info"><a class=" text-decoration-none" href="package.html"
+                                    style="color:rgba(255,255,255,0.8);">Packages</a></li>
+                            <li class="mb-1 text-info"><a class=" text-decoration-none" href="gallery.html"
+                                    style="color:rgba(255,255,255,0.8);">Gallery</a></li>
+                            <li class="mb-1 text-info"><a class=" text-decoration-none" href="contact.html"
+                                    style="color:rgba(255,255,255,0.8);">Contacts</a></li>
+                            <li class="mb-1 text-info"><a class=" text-decoration-none" href="faqs.html"
+                                    style="color:rgba(255,255,255,0.8);">FAQs</a></li>
+                            <li class="mb-1 text-info"><a class=" text-decoration-none" href="privacy.html"
+                                    style="color:rgba(255,255,255,0.8);">Privacy
+                                    Policy</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-12 col-md">
+                        <h5 class="mx-2 fw-bold" style="font-family: poppins;">Packages</h5>
+                        <ul class=" text-small" style="font-family: barlow ;">
+                            <li class="mb-1 text-info"><a class="link-light text-decoration-none"
+                                    href="singapore.packages.html" style="color:rgba(255,255,255,0.8);">Singapore
+                                    Packages</a>
+                            </li>
+                            <li class="mb-1 text-info"><a class="link-light text-decoration-none"
+                                    href="singapore2.packages.html" style="color:rgba(255,255,255,0.8);">Singapore</a>
+                            </li>
+                            <li class="mb-1 text-info"><a class="link-light text-decoration-none"
+                                    href="dubai.packages.html" style="color:rgba(255,255,255,0.8);">Dubai</a></li>
+                            <li class="mb-1 text-info"><a class="link-light text-decoration-none"
+                                    href="maldives.packages.html">Maldives</a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+                <div class="py-3 border-top">
+                    <div class="col-md-4">
+
+                        <span class="mb-3 mb-md-0 "
+                            style="color:rgba(255,255,255,0.8);font-size: 14px ;font-family: barlow;">©2023 <a href="/"
+                                class="text-decoration-none">NextGenTours.</a> All rights reserved.</span>
+                    </div>
+
+
+                </div>
+            </footer>
+
+
+
+        </div>
+
+        <!-----------------------FOOTER-END----------------------------------------------->
+
+
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+        <script src="jquery-3.7.1.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+
+        <script>
+            document.addEventListener("scroll", function () {
+                const hiddenNavbar = document.getElementById("hiddenNavbar");
+                if (window.scrollY > 103) {
+                    hiddenNavbar.classList.add("navbar-visible");
+                } else {
+                    hiddenNavbar.classList.remove("navbar-visible");
+                }
+            });
+        </script>
+        <script>
+            const colorOverlay = document.querySelector('.color-overlay');
+            let isColorOverlay = true;
+            window.addEventListener('scroll', () => {
+                if (isColorOverlay) {
+                    colorOverlay.classList.remove('color-overlay');
+                    colorOverlay.classList.add('hiddenColor-overlay');
+                } else {
+                    colorOverlay.classList.remove('hiddenColor-overlay');
+                    colorOverlay.classList.add('color-overlay');
+                }
+                isColorOverlay = !isColorOverlay;
+            });
+        </script>
+
+</body>
+
+</html>
