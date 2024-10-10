@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+        @media only screen and (max-width:992px) {
+            .nav-link {
+                background-color: white;
+                color: #2098ae !important;
+                padding: 2% 5%;
+            }
+
+            .navbar-nav {
+                width: 100% !important;
+            }
+        }
+
+        @font-face {
+            font-family: poppins;
+            src: url(NextgentourAssets/Poppins-Regular.ttf);
+        }
+
+        @font-face {
+            font-family: barlow;
+            src: url(NextgentourAssets/Barlow-Regular.ttf);
+        }
+
+        /* **************************navbar********************** */
+        .nav-item {
+            font-family: barlow !important;
+        }
+
+        .navbar-nav {
+            width: 43%;
+            justify-content: center;
+            gap: 1px;
+        }
+
+        .navbar {
+            position: absolute;
+            z-index: 1;
+            width: 100%;
+        }
+
+        .nav-item:hover a {
+            color: #2098ae !important;
+        }
+
+
+
+        #hiddenNavbar {
+            position: fixed;
+            z-index: 5;
+            top: -103px;
+            transition: top 1s;
+
+        }
+
+        .navbar-visible {
+            top: 0 !important;
+
+        }
+
+        /* **************************NAVBAR-END******************************/
+
+        /* font */
+        .featurette-heading {
+            font-family: poppins !important;
+        }
+
+        .featurette-heading-light {
+            font-family: barlow !important;
+        }
+
+        .foot {
+            font-family: barlow;
+        }
+
+        .head {
+            font-family: poppins;
+        }
+
+        /* *************************GALLERY************** */
+        .card {
+            border-radius: 0 !important;
+        }
+
+        .hover-shrink-gallery:hover {
+            transform: scale(1.1);
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .hover-shrink-gallery {
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .overflow {
+            position: relative;
+            overflow: hidden;
+        }
+
+
+
+        /* *************************GALLERY-END************** */
+
+        /* full-image */
+
+        /* full-image */
+    </style>
+</head>
+
+<body data-bs-spy="scroll" data-bs-target="#hiddenNavbar" data-bs-offset="100" tabindex="0" class="overflow-x-hidden">
+
+
+
+    <!-- hidden-img -->
+
+
+
+    <div class="gallery-full-img position-fixed h-100 w-100  "
+        style="z-index: 8;background-color: rgb(15, 36, 84,0.65);display: none ;" id="hiddenImage"  >
+
+        <div class="row  mx-auto w-100 align-items-center justify-content-center ">
+
+            <div id="carouselExample" class="carousel  slide mx-auto col-md-10 col-lg-8 ">
+                <div class="exit position-relative text-light" style="z-index: 8;right: -98%;cursor: pointer;" onclick="document.getElementById('hiddenImage').style.display='none'" >X</div>
+                <div class="exit position-relative text-light" style="z-index: 8;right: -2%;cursor: pointer;" onclick="document.getElementById('hiddenImage').style.transform='scale(1.1)'" ondblclick="document.getElementById('hiddenImage').style.transform='scale(1.2)'" >Q</div>
+                <div class="carousel-inner ">
+                    <div class="carousel-item" id="slideOne">
+                        <img src="NextgentourAssets/garden.jpg" alt="" width="100%">
+                    </div>
+                    <div class="carousel-item " id="slideTwo">
+                        <img src="NextgentourAssets/marina.jpg" alt="" width="100%">
+                    </div>
+                    <div class="carousel-item" id="slideThree">
+                        <img src="NextgentourAssets/garden2.jpg" alt="" width="100%">
+                    </div>
+                    <div class="carousel-item" id="slideFive">
+                        <img src="NextgentourAssets/flyer.jpg" alt="" width="100%">
+                    </div>
+                    <div class="carousel-item" id="slideSix" >
+                        <img src="NextgentourAssets/gaint-wheel.png" alt="" width="100%">
+                    </div>
+                    <div class="carousel-item" id="slideSeven">
+                        <img src="NextgentourAssets/studio.jpg" alt="" width="100%">
+                    </div>
+                    <div class="carousel-item" id="slideEight">
+                        <img src="NextgentourAssets/sentosa 1.jpg" alt="" width="100%">
+                    </div>
+                    <div class="carousel-item" id="slideNine">
+                        <img src="NextgentourAssets/burj1.jpg" alt="" width="100%">
+                    </div>
+                    <div class="carousel-item" id="slideTen">
+                        <img src="NextgentourAssets/dubai 3.jpg" alt="" width="100%">
+                    </div>
+                    <div class="carousel-item" id="slideEleven">
+                        <img src="NextgentourAssets/kite beach.jpg" alt="" width="100%">
+                    </div>
+                    <div class="carousel-item" id="slideEleven">
+                        <img src="NextgentourAssets/160423100408-BO_6936-SPA.jpeg" alt="" width="100%">
+                    </div>
+                    <div class="carousel-item" id="slideEleven">
+                        <img src="NextgentourAssets/160423100406-Ayada Maldives villas SUNSET O.jpg" alt="" width="100%">
+                    </div>
+                    <div class="carousel-item" id="slideEleven">
+                        <img src="NextgentourAssets/160423100438-LilyBeach3.png" alt="" width="100%">
+                    </div>
+                </div>
+                    <div class="carousel-item" id="slideEleven">
+                        <img src="NextgentourAssets/160423100407-river-cruise.jpg" alt="" width="100%">
+                    </div>
+                </div>
+                <button class="carousel-control-prev " type="button" data-bs-target="#carouselExample"
+                    data-bs-slide="prev">
+                    <span ><i class="bi bi-caret-left-fill text-white"></i></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExample"
+                    data-bs-slide="next">
+                    <span ><i class="bi bi-caret-right-fill"></i></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+    <!---navbar-------------------------->
+
+    <nav class="navbar navbar-expand-lg ">
+        <div class="container-fluid m-auto px-0 "
+            style="border-bottom: 1px solid rgb(184, 173, 236, 0.3); width: 84%;padding-top:3px ;">
+            <a class="navbar-brand px-3 pb-3" href="#"><img class="hover-shrink-gallery"
+                    src="NextgentourAssets/logo-light.png" alt="" width="160px"></a>
+            <button class="navbar-toggler border-0 " type="button " data-bs-toggle="collapse"
+                style="color: transparent;" data-bs-target="#navbarSupportContent" aria-controls="navbarSupportContent"
+                aria-expanded="false" aria-label="Toggle navigation ">
+                <i class="bi bi-list" style="color: white; font-size: larger;"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 ">
+                    <li class="nav-item ">
+                        <a class="nav-link active text-white " aria-current="page" href="home.htm">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active text-white" aria-current="page" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active text-white" aria-current="page" href="package.html">Packages</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active text-white" aria-current="page" href="gallery.html">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active text-white" aria-current="page" href="contact.html">Contact</a>
+                    </li>
+            </div>
+        </div>
+    </nav>
+    <nav class="navbar navbar-expand-lg bg-light" id="hiddenNavbar">
+        <div class="container-fluid m-auto " style=" width: 90%;">
+            <a class="navbar-brand px-2 pt-2 " href="#" style="margin-left: 3%;"><img class="hover-shrink-gallery"
+                    src="NextgentourAssets/logo-dark.png" alt="" width="160px"></a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" style="color: transparent;"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <i class="bi bi-list" style="color:#0f2454; font-size: larger;"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 ">
+                    <li class="nav-item ">
+                        <a class="nav-link active " aria-current="page" href="#" style="color: #2098ae;">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active " aria-current="page" href="#" style="color: #2098ae;">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active " aria-current="page" href="#" style="color: #2098ae;">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active " aria-current="page" href="#" style="color: #2098ae;">Packages</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active " aria-current="page" href="#" style="color: #2098ae;">Contact</a>
+                    </li>
+            </div>
+        </div>
+    </nav>
+    <!---navbar-end---------------------->
+
+
+    <!-- banner -->
+    <div class="position-relative overflow-hidden  " style="background-image: url(NextgentourAssets/1920x1280.jpg);">
+        <div class="row">
+            <div class="container pt-3" style="width: 90%;">
+                <div class="col-md-7 p-5 " style="margin-top: 90px;">
+                    <h6 class="featurette-heading-light fw-lighter mb-3 text-white  text-uppercase "
+                        style="letter-spacing: 3px; ">images and videos</h6>
+                    <div class="mb-4">
+                        <span>
+                            <h1 class="display-5 fw-bold text-white text-uppercase d-inline ">image </h1>
+                        </span>
+                        <span>
+                            <h1 class="display-5 fw-bold  text-uppercase d-inline" style="color: #2098ae;">&
+                            </h1>
+                        </span>
+                        <span>
+                            <h1 class="display-5 fw-bold text-white text-uppercase d-inline ">video </h1>
+                        </span>
+                        <span>
+                            <h1 class="display-5 fw-bold  text-uppercase d-inline" style="color: #2098ae;">gallery
+                            </h1>
+                        </span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+    <!-- bannerend -->
+
+
+    <!-- ----------------------gallery----------------------------- -->
+
+    <div class="album py-5 bg-body-tertiary">
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="container">
+        <div class="row row-cols-1 row-cols-sm-1 row-cols-md-3 g-4 mb-5" >
+
+
+            <div class="col" onclick="slide(0)">
+                <div class="card shadow-sm p-3 text-center">
+                    <div class="card overflow ">
+                        <img class="hover-shrink-gallery" src="NextgentourAssets/garden.jpg">
+                    </div>
+                    <div class="CARD-TXT">
+                        <h5 class="card-text  " style="margin-top: 12px;margin-bottom: 8px;color: #2098ae;">Marina
+                            Bay Sand</h5>
+                        <p class=" lh-2 mb-4"
+                            style="color: #676977; font-size: 16px;font-weight:normal;font-family: barlow;">Get a
+                            bird eye view of Singapore stunning skyline from the Marina Bay Sands observation deck.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col" onclick="slide(1)">
+                <div class="card shadow-sm p-3 text-center">
+                    <div class="card overflow ">
+                        <img class="hover-shrink-gallery" src="NextgentourAssets/marina.jpg" alt="" width="100%">
+                    </div>
+                    <div class="CARD-TXT">
+                        <h5 class="card-text  " style="margin-top: 12px;margin-bottom: 8px;color: #2098ae;">Marina
+                            Bay Sand</h5>
+                        <p class=" lh-2 mb-4"
+                            style="color: #676977; font-size: 16px;font-weight:normal;font-family: barlow;">Get a
+                            bird eye view of Singapore stunning skyline from the Marina Bay Sands observation deck.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col" onclick="slide(2)">
+                <div class="card shadow-sm p-3 text-center">
+                    <div class="card overflow ">
+                        <img class="hover-shrink-gallery" src="NextgentourAssets/garden2.jpg" alt="" width="100%">
+                    </div>
+                    <div class="CARD-TXT">
+                        <h5 class="card-text  " style="margin-top: 12px;margin-bottom: 8px;color: #2098ae;">Garden
+                            By The Bay</h5>
+                        <p class=" lh-2 mb-4"
+                            style="color: #676977; font-size: 16px;font-weight:normal;font-family: barlow;">
+                            Experience a creative floral arrangements at Floral Fantasy. Head up to the Cloud Forest
+                            to see the world tallest indoor waterfall.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col" onclick="slide(3)">
+                <div class="card shadow-sm p-3 text-center">
+                    <div class="card overflow ">
+                        <img class="hover-shrink-gallery" src="NextgentourAssets/flyer.jpg" alt="" width="100%">
+                    </div>
+                    <div class="CARD-TXT">
+                        <h5 class="card-text  " style="margin-top: 12px;margin-bottom: 8px;color: #2098ae;">
+                            Singapore Flyer</h5>
+                        <p class=" lh-2 mb-4"
+                            style="color: #676977; font-size: 16px;font-weight:normal;font-family: barlow;">Fly high
+                            above Singapore's skyline, a breath taking view that enchants the senses.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col" onclick="slide(4)">
+                <div class="card shadow-sm p-3 text-center">
+                    <div class="card overflow ">
+                        <img class="hover-shrink-gallery" src="NextgentourAssets/gaint-wheel.png" alt="">
+                    </div>
+                    <div class="CARD-TXT">
+                        <h5 class="card-text  " style="margin-top: 12px;margin-bottom: 8px;color: #2098ae;">
+                            Singapore Flyer</h5>
+                        <p class=" lh-2 mb-4"
+                            style="color: #676977; font-size: 16px;font-weight:normal;font-family: barlow;">
+                            Experience breathtaking views atop the iconic Singapore Flyer, a true marvel.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col" onclick="slide(5)">
+                <div class="card shadow-sm p-3 text-center">
+                    <div class="card overflow ">
+                        <img class="hover-shrink-gallery" src="NextgentourAssets/studio.jpg" alt="" width="100%">
+                    </div>
+                    <div class="CARD-TXT">
+                        <h5 class="card-text  " style="margin-top: 12px;margin-bottom: 8px;color: #2098ae;">
+                            Universal studio</h5>
+                        <p class=" lh-2 mb-4"
+                            style="color: #676977; font-size: 16px;font-weight:normal;font-family: barlow;">Step
+                            into a world of cinematic adventure and endless excitement at Universal Studios.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col" onclick="slide(6)">
+                <div class="card shadow-sm p-3 text-center">
+                    <div class="card overflow ">
+                        <img class="hover-shrink-gallery" src="NextgentourAssets/sentosa 1.jpg" alt="" width="100%">
+                    </div>
+                    <div class="CARD-TXT">
+                        <h5 class="card-text  " style="margin-top: 12px;margin-bottom: 8px;color: #2098ae;">Sentosa
+                            Island</h5>
+                        <p class=" lh-2 mb-4"
+                            style="color: #676977; font-size: 16px;font-weight:normal;font-family: barlow;">Escape
+                            to a tropical paradise of sun, sea, and fun at Sentosa Island.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col" onclick="slide(7)">
+                <div class="card shadow-sm p-3 text-center">
+                    <div class="card overflow ">
+                        <img class="hover-shrink-gallery" src="NextgentourAssets/burj1.jpg" alt="" width="100%">
+                    </div>
+                    <div class="CARD-TXT">
+                        <h5 class="card-text  " style="margin-top: 12px;margin-bottom: 8px;color: #2098ae;">Burj
+                            khalifa</h5>
+                        <p class=" lh-2 mb-4"
+                            style="color: #676977; font-size: 16px;font-weight:normal;font-family: barlow;">Burj
+                            Khalifa stands as a magnificent symbol of Dubai's ambition and innovation.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col" onclick="slide(8)">
+                <div class="card shadow-sm p-3 text-center">
+                    <div class="card overflow ">
+                        <img class="hover-shrink-gallery" src="NextgentourAssets/dubai 3.jpg" alt="" width="100%">
+                    </div>
+                    <div class="CARD-TXT">
+                        <h5 class="card-text  " style="margin-top: 12px;margin-bottom: 8px;color: #2098ae;">Burj Al
+                            Arab</h5>
+                        <p class=" lh-2 mb-4"
+                            style="color: #676977; font-size: 16px;font-weight:normal;font-family: barlow;">Burj Al
+                            Arab sets the standard for hospitality in Dubai and around the world.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col" onclick="slide(9)">
+                <div class="card shadow-sm p-3 text-center">
+                    <div class="card overflow ">
+                        <img class="hover-shrink-gallery" src="NextgentourAssets/kite beach.jpg" alt="" width="100%">
+                    </div>
+                    <div class="CARD-TXT">
+                        <h5 class="card-text  " style="margin-top: 12px;margin-bottom: 8px;color: #2098ae;">Kite
+                            Beach</h5>
+                        <p class=" lh-2 mb-4"
+                            style="color: #676977; font-size: 16px;font-weight:normal;font-family: barlow;">Relax on
+                            sand, fly a kite, or catch a wave, a haven for outdoor enthusiasts in Dubai.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col" onclick="slide(10)">
+                <div class="card shadow-sm p-3 text-center">
+                    <div class="card overflow ">
+                        <img class="hover-shrink-gallery" src="NextgentourAssets/160423100408-BO_6936-SPA.jpeg" alt="">
+                    </div>
+                    <div class="CARD-TXT">
+                        <h5 class="card-text  " style="margin-top: 12px;margin-bottom: 8px;color: #2098ae;">
+                            Medhufushi Island Resort</h5>
+                        <p class=" lh-2 mb-4"
+                            style="color: #676977; font-size: 16px;font-weight:normal;font-family: barlow;">White
+                            sands, warm waters, and endless sunshine - Maldives paradise found.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col" onclick="slide(11)">
+                <div class="card shadow-sm p-3 text-center">
+                    <div class="card overflow ">
+                        <img class="hover-shrink-gallery"
+                            src="NextgentourAssets/160423100406-Ayada Maldives villas SUNSET O.jpg" alt="" width="100%">
+                    </div>
+                    <div class="CARD-TXT">
+                        <h5 class="card-text  " style="margin-top: 12px;margin-bottom: 8px;color: #2098ae;">Ayada
+                            Maldives</h5>
+                        <p class=" lh-2 mb-4"
+                            style="color: #676977; font-size: 16px;font-weight:normal;font-family: barlow;">
+                            Turquoise waters, pristine beaches, and pure serenity. Maldives, a paradise found.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col" onclick="slide(12)">
+                <div class="card shadow-sm p-3 text-center">
+                    <div class="card overflow ">
+                        <img class="hover-shrink-gallery" src="NextgentourAssets/160423100438-LilyBeach3.png" alt="">
+                    </div>
+                    <div class="CARD-TXT">
+                        <h5 class="card-text  " style="margin-top: 12px;margin-bottom: 8px;color: #2098ae;">Lily
+                            Beach Resort</h5>
+                        <p class=" lh-2 mb-4"
+                            style="color: #676977; font-size: 16px;font-weight:normal;font-family: barlow;">Paradise
+                            found in Maldives, where sun, sand, and sea meet.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col" onclick="slide(13)">
+                <div class="card shadow-sm p-3 text-center">
+                    <div class="card overflow ">
+                        <img class="hover-shrink-gallery" src="NextgentourAssets/160423100407-river-cruise.jpg" alt="">
+                    </div>
+                    <div class="CARD-TXT">
+                        <h5 class="card-text  " style="margin-top: 12px;margin-bottom: 8px;color: #2098ae;">River
+                            Cruise</h5>
+                        <p class=" lh-2 mb-4"
+                            style="color: #676977; font-size: 16px;font-weight:normal;font-family: barlow;">Let the
+                            river be your guide to breath taking discoveries.</p>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+
+        </div>
+    </div>
+    </div>
+
+    <!-- ----------------------gallery-end---------------------------- -->
+
+
+
+
+    <!-----------------------FOOTER--------------------------------------------------->
+    <div class="foot" style="background-color: #0f2454;">
+        <div class="container pt-5">
+
+
+            <div class="foot" style="background-color: #0f2454;">
+                <div class="container py-5 ">
+                    <div class="row ps-2 py-3 d-flex align-items-center" style="border: 1px solid #676977;">
+
+
+                        <div class="col-12 col-sm-12 col-md-5 col-lg-3 right-border">
+
+                            <div class="call d-flex justify-content-start mb-3 p-2 ">
+                                <div class="call-icon bg-info me-3 my-auto p-2 text-white " style="width: 4rem;"><i
+                                        class="bi bi-telephone" style="font-size: 3rem;"></i></div>
+                                <div class="mobile-no">
+                                    <div class="head text-white fw-bold">Call us</div>
+                                    <a href="tel:+7079465980" class="w-100 text-white ">+91 7079465980</a><br>
+                                    <a href="tel:+7079465980" class="w-100 text-white">+91 7079465980</a>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="d-none d-sm-block d-md-none d-lg-none" style="border-bottom: 1px solid #676977 ;">
+                        </div>
+
+
+
+                        <div class="col-12 col-sm-12 col-md-6 col-lg-3 right-border">
+                            <div class="mail d-flex justify-content-start mb-3 p-2">
+                                <div class="mail-icon bg-info me-3 my-auto p-2 text-white " style="width: 4rem;"><i
+                                        class="bi bi-envelope-paper" style="font-size: 3rem;"></i></div>
+                                <div class="mail-id">
+                                    <div class="head text-white fw-bold">Write to us</div>
+
+                                    <a class="w-100 text-white"
+                                        href="mailto:info@nextgentours.net">info@nextgentours.net</a>
+                                </div>
+                            </div>
+
+
+
+                        </div>
+                        <div class=" d-none d-sm-block d-md-none d-lg-none" style="border-bottom: 1px solid #676977 ;">
+                        </div>
+                        <div class="border-end d-none d-sm-none d-md-none d-lg-block  col-1"></div>
+                        <div class="col-12 col-sm-12 col-md-12 col-lg-4 ">
+
+                            <div class="add d-flex justify-content-start p-2">
+                                <div class="add-icon bg-info me-3 my-auto p-2 text-white " style="width: 4rem;"><i
+                                        class="bi bi-geo-alt" style="font-size: 3rem;"></i></div>
+                                <div class="add-location">
+                                    <div class="head text-white fw-bold">Address</div>
+
+                                    <div class="office w-100 text-white">
+                                        <span class="text-info">Singapore Office: </span>BKL 202B Seng keng East Road
+                                        #02-07 Singapore-542202
+                                    </div>
+                                    <div class="office w-100 text-white">
+                                        <span class="text-info">India Office: </span>Rz-24, B-Block,Arjun Park,
+                                        Najafgarh, New Delhi-11043
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+
+
+
+
+
+
+                    </div>
+                </div>
+
+
+            </div>
+
+
+
+            <footer class="pt-4 my-mt-5 pt-md-5 " style="background-color:#0f2454">
+                <div class="row row-cols-1 row-cols-sm-1 row-cols-md-3 row-cols-lg-3 text-light py-5">
+                    <div class="col-12 col-md">
+                        <img class="hover-shrink-gallery" class="mb-2 " src="NextgentourAssets/logo-light.png" alt=""
+                            style="width: 160px;">
+                        <small class="d-block mb-3  fs-6"
+                            style="color:rgba(255,255,255,0.8);font-family: barlow;">Nextgen
+                            Tours is a leading travel
+                            agency in Singapore which
+                            was established in 2023.</small>
+                    </div>
+
+                    <div class=" col-12 col-md">
+                        <h5 class="mx-2 fw-bold" style="font-family: poppins;">Quick Links</h5>
+                        <ul class=" text-small " style="font-family: barlow;">
+                            <li class="mb-1 text-info"><a class=" text-decoration-none" href="home.htm"
+                                    style="color:rgba(255,255,255,0.8);">Home</a></li>
+                            <li class="mb-1 text-info"><a class=" text-decoration-none" href="about.html"
+                                    style="color:rgba(255,255,255,0.8);">About</a></li>
+                            <li class="mb-1 text-info"><a class=" text-decoration-none" href="package.html"
+                                    style="color:rgba(255,255,255,0.8);">Packages</a></li>
+                            <li class="mb-1 text-info"><a class=" text-decoration-none" href="gallery.html"
+                                    style="color:rgba(255,255,255,0.8);">Gallery</a></li>
+                            <li class="mb-1 text-info"><a class=" text-decoration-none" href="contact.html"
+                                    style="color:rgba(255,255,255,0.8);">Contacts</a></li>
+                            <li class="mb-1 text-info"><a class=" text-decoration-none" href="faqs.html"
+                                    style="color:rgba(255,255,255,0.8);">FAQs</a></li>
+                            <li class="mb-1 text-info"><a class=" text-decoration-none" href="privacy.html"
+                                    style="color:rgba(255,255,255,0.8);">Privacy
+                                    Policy</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-12 col-md">
+                        <h5 class="mx-2 fw-bold" style="font-family: poppins;">Packages</h5>
+                        <ul class=" text-small" style="font-family: barlow ;">
+                            <li class="mb-1 text-info"><a class="link-light text-decoration-none"
+                                    href="singapore.packages.html" style="color:rgba(255,255,255,0.8);">Singapore
+                                    Packages</a>
+                            </li>
+                            <li class="mb-1 text-info"><a class="link-light text-decoration-none"
+                                    href="singapore2.packages.html" style="color:rgba(255,255,255,0.8);">Singapore</a>
+                            </li>
+                            <li class="mb-1 text-info"><a class="link-light text-decoration-none"
+                                    href="dubai.packages.html" style="color:rgba(255,255,255,0.8);">Dubai</a></li>
+                            <li class="mb-1 text-info"><a class="link-light text-decoration-none"
+                                    href="maldives.packages.html">Maldives</a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+                <div class="py-3 border-top">
+                    <div class="col-md-4">
+
+                        <span class="mb-3 mb-md-0 "
+                            style="color:rgba(255,255,255,0.8);font-size: 14px ;font-family: barlow;">©2023 <a href="/"
+                                class="text-decoration-none">NextGenTours.</a> All rights reserved.</span>
+                    </div>
+
+
+                </div>
+            </footer>
+
+
+
+        </div>
+
+        <!-----------------------FOOTER-END----------------------------------------------->
+
+
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script>
+            document.addEventListener("scroll", function () {
+                const hiddenNavbar = document.getElementById("hiddenNavbar");
+                if (window.scrollY > 103) {
+                    hiddenNavbar.classList.add("navbar-visible");
+                } else {
+                    hiddenNavbar.classList.remove("navbar-visible");
+                }
+            });
+        </script>
+          <script>
+            function slide(index) {
+              document.getElementById('hiddenImage').style.display = 'flex';
+        
+              slides = document.getElementsByClassName('carousel-item');
+              slides[index].classList.add('active');
+            }
+        
+           
+          </script>
+
+
+
+
+
+
+</body>
+
+</html>
